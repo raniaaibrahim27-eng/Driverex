@@ -273,11 +273,11 @@ li {
 .slide:nth-child(3) { animation-delay: 6s; }
 .slide:nth-child(4) { animation-delay: 9s; }
 @keyframes fadeSlides {
-  0%   { opacity: 0; }
-  8%   { opacity: 1; }
-  25%  { opacity: 1; }
-  33.33%  { opacity: 0; }
-  100% { opacity: 0; }
+  0%      { opacity: 0; }
+  5%      { opacity: 1; }
+  25%     { opacity: 1; }
+  30%     { opacity: 0; }
+  100%    { opacity: 0; }
 }
 .hero-content {
   position: absolute;
@@ -309,8 +309,8 @@ li {
   height: 65px;
   background: rgb(177, 5, 5);
   color: white;
-  padding: 20px 22px;
-  font-size: 20px;
+  padding: 15px 22px;
+  font-size: 21.5px;
   border-radius: 3px;
   text-decoration: none;
   display: inline-block;
