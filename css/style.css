@@ -111,7 +111,7 @@ li {
   visibility: visible;
   opacity: 1;
   transform: scale(1, 1);
-  padding: 0 10px; 
+  padding: 0 10px;
   padding-top: 20px;
   margin-left: -10px;
   margin-top: -10px;
@@ -229,55 +229,41 @@ li {
 .l-part a:hover {
   letter-spacing: 2px;
 }/*-----------------------------------------------------------*/
+/* ===================== HERO SLIDER ===================== */
 .hero-slider {
   position: relative;
   width: 100%;
   height: 100vh;
   overflow: hidden;
+  background: #000;
 }
 .slides {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  inset: 0;
 }
 .slide {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  inset: 0;
   opacity: 0;
-  animation: fadeSlides 12s infinite;
   z-index: 1;
+  transition: opacity 1s ease-in-out;
+}
+.slide.active {
+  opacity: 1;
+  z-index: 2;
 }
 .slide img,
 .slide video {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  display: block;
 }
 .slide::after {
   content: '';
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  inset: 0;
   background: linear-gradient(to bottom, rgba(0,0,0,0.35), rgba(0,0,0,0.65));
-  z-index: 2;
-}
-.slide:nth-child(1) { animation-delay: 0s; }
-.slide:nth-child(2) { animation-delay: 3s; }
-.slide:nth-child(3) { animation-delay: 6s; }
-.slide:nth-child(4) { animation-delay: 9s; }
-@keyframes fadeSlides {
-  0%      { opacity: 0; }
-  5%      { opacity: 1; }
-  25%     { opacity: 1; }
-  30%     { opacity: 0; }
-  100%    { opacity: 0; }
 }
 .hero-content {
   position: absolute;
@@ -585,7 +571,6 @@ li {
   line-height: 1.5;
   color: #5e3333;
 }
-
 .clients > div {
   display: flex;
   align-items: center;
@@ -650,8 +635,8 @@ li {
   transform: translateY(0);
   opacity: 1;
   visibility: visible;
-} 
-.recommended .sec2-content .rec-item .icons3{
+}
+.recommended .sec2-content .rec-item .icons3 {
   width: 17%;
   height: 30%;
   display: flex;
@@ -661,7 +646,7 @@ li {
   left: 84%;
   z-index: 10;
 }
-.recommended .sec2-content .rec-item .icons3 a{
+.recommended .sec2-content .rec-item .icons3 a {
   color: #f70a0a;
   width: 100%;
   height: calc(100% / 3);
@@ -675,235 +660,235 @@ li {
   transform: translateX(20%);
   transition: 1s;
 }
-.recommended .sec2-content .rec-item:hover .icons3 a{
+.recommended .sec2-content .rec-item:hover .icons3 a {
   opacity: 1;
   visibility: visible;
   transform: translateX(0);
 }
-.recommended .sec2-content .rec-item .icons3 a:hover{
+.recommended .sec2-content .rec-item .icons3 a:hover {
   background: #f70a0a;
   color: #0a0a0a;
 }  /*--------------------------------------------------------------*/
-.sec5{
-    width: 100%;
-    min-height: 600px;
-    margin-top: 70px;
-    background-color: #f1dada;
-    box-shadow: 1px 1px 2px #00000070,-1px -1px 2px #00000070;
+.sec5 {
+  width: 100%;
+  min-height: 600px;
+  margin-top: 70px;
+  background-color: #f1dada;
+  box-shadow: 1px 1px 2px #00000070, -1px -1px 2px #00000070;
 }
-.sec5 h2{
-    text-align: center;
-    padding: 50px 0;
-    font-size: 34px;
-    color: #860707;
+.sec5 h2 {
+  text-align: center;
+  padding: 50px 0;
+  font-size: 34px;
+  color: #860707;
 }
-.new-model{
-    display: flex;
-    justify-content: space-between;
+.new-model {
+  display: flex;
+  justify-content: space-between;
 }
-.new-model > div{
-    width: 30%;
-    height: 100%;
-    perspective: 800px;
+.new-model > div {
+  width: 30%;
+  height: 100%;
+  perspective: 800px;
 }
-.new-model > div img{
-    width: 100%;
-    height: 430px;
+.new-model > div img {
+  width: 100%;
+  height: 430px;
 }
-.newcar{
+.newcar {
   transform: translateZ(35px);
 }
-.new-model > div img:hover{
-    transform: translateZ(35px);
+.new-model > div img:hover {
+  transform: translateZ(35px);
 }
-.new-model > div span{
-    display: block;
-    color: #16161a80;
-    padding-top: 15px;
+.new-model > div span {
+  display: block;
+  color: #16161a80;
+  padding-top: 15px;
 }
-.new-model > div a{
-    color: #973f3f;
-    font-size: 20px;
-    margin: 15px 0;
+.new-model > div a {
+  color: #973f3f;
+  font-size: 20px;
+  margin: 15px 0;
 }
-.new-model > div:hover  a:not(.more){
-    color: #c00;
+.new-model > div:hover a:not(.more) {
+  color: #c00;
 }
-.new-model > div .more{
-    text-decoration: underline;
-    margin-bottom: 50px;
-    font-size: 22px;
+.new-model > div .more {
+  text-decoration: underline;
+  margin-bottom: 50px;
+  font-size: 22px;
 }
-.new-model > div .more:hover{
-    transform: scale(1.1,1.1);
-    color: #c00;
+.new-model > div .more:hover {
+  transform: scale(1.1, 1.1);
+  color: #c00;
 }
-.new-model > div p{
-    color: #21212580;
-    font-size: 18px;
+.new-model > div p {
+  color: #21212580;
+  font-size: 18px;
 } /*------------------------------------------------------------*/
-.sec6{
+.sec6 {
   width: 100%;
   height: 300px;
   background-color: #db080896;
 }
-.contentt{
-    padding-top: 70px;
-    display: flex;
-    justify-content: space-between;
-    text-align: center;
+.contentt {
+  padding-top: 70px;
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
 }
-.contentt div > div{
-    width: 100%;
-    height: 60px;
-    overflow: hidden;
-    position: relative;
+.contentt div > div {
+  width: 100%;
+  height: 60px;
+  overflow: hidden;
+  position: relative;
 }
-.contentt div > div i{
-    font-size: 48px;
-    margin-bottom: 30px;
-    color: #5e5c5c;
-    width: 100%;
-    transition: transform 0.3s ease;
+.contentt div > div i {
+  font-size: 48px;
+  margin-bottom: 30px;
+  color: #5e5c5c;
+  width: 100%;
+  transition: transform 0.3s ease;
 }
-.contentt div div #sec6-icon{
-    position: absolute;
-    top: 0;
-    left: 0;
-    color: #5e5c5c;
-    transform: translateY(65px);
-    transition: transform 0.3s ease;
+.contentt div div .sec6-icon {
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: #5e5c5c;
+  transform: translateY(65px);
+  transition: transform 0.3s ease;
 }
-.contentt div:hover > div i{
-    transform: translateY(-78px);
-    color: #050505;
+.contentt div:hover > div i {
+  transform: translateY(-78px);
+  color: #050505;
 }
-.contentt div:hover div #sec6-icon{
-    transform: translateY(0);
+.contentt div:hover div .sec6-icon {
+  transform: translateY(0);
 }
-.contentt h3{
-    margin-top: 10px;
-    color: #e3e3ec;
+.contentt h3 {
+  margin-top: 10px;
+  color: #e3e3ec;
 }
-.contentt p{
-    margin-top: 20px;
-    color: #939396;
-    font-size: 15px;
+.contentt p {
+  margin-top: 20px;
+  color: #939396;
+  font-size: 15px;
 }  /*--------------------------------------------------------------*/
-.footer{
-    width: 100%;
-    min-height: 550px;
-    margin-top: 70px;
-    background: #000000;
+.footer {
+  width: 100%;
+  min-height: 550px;
+  margin-top: 70px;
+  background: #000000;
 }
-.last-sec{
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    color: #fff;
+.last-sec {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  color: #fff;
 }
-.last-sec > div{
-    display: flex;
-    padding-top: 20px;
-    justify-content: space-between;
-    align-items: flex-start;
+.last-sec > div {
+  display: flex;
+  padding-top: 20px;
+  justify-content: space-between;
+  align-items: flex-start;
 }
-.last-sec .div1{
-    width: 100%;
-    min-height: 120px;
-    align-items: center;
-    border-bottom: 1px solid #f2fffe60;
+.last-sec .div1 {
+  width: 100%;
+  min-height: 120px;
+  align-items: center;
+  border-bottom: 1px solid #f2fffe60;
 }
-.last-sec .div1 div p{
-    padding-top: 15px;
-    font-size: 14px;
+.last-sec .div1 div p {
+  padding-top: 15px;
+  font-size: 14px;
 }
-.last-sec .div1 div input{
-    width: 380px;
-    height: 50px;
-    background-color: #bdb2b2;
-    border-color: rgb(151, 142, 142);
-    padding-left: 15px;
-    font-size: 20px;
+.last-sec .div1 div input {
+  width: 380px;
+  height: 50px;
+  background-color: #bdb2b2;
+  border-color: rgb(151, 142, 142);
+  padding-left: 15px;
+  font-size: 20px;
 }
-.last-sec .div1 .send-email{
-    display: flex;
+.last-sec .div1 .send-email {
+  display: flex;
 }
-.last-sec .div1 div .subscribe{
-    color: #fff;
-    width: 150px;
-    height: 50px;
-    margin-left: 10px;
-    background: #c00;
-    font-size: 20px;
-    line-height: 50px;
-    text-align: center;
+.last-sec .div1 div .subscribe {
+  color: #fff;
+  width: 150px;
+  height: 50px;
+  margin-left: 10px;
+  background: #c00;
+  font-size: 20px;
+  line-height: 50px;
+  text-align: center;
 }
-.last-sec .div1 div input:focus{
-    outline: none;
+.last-sec .div1 div input:focus {
+  outline: none;
 }
-.last-sec .div1 div a i{
+.last-sec .div1 div a i {
   color: #f2fffe;
 }
-.last-sec .div1 div a i:hover{
+.last-sec .div1 div a i:hover {
   color: #f70a0a;
 }
-.last-sec .div1 div a{
-    color: #677F8B;
-    font-size: 24px;
-    margin-left: 10px;
+.last-sec .div1 div a {
+  color: #677F8B;
+  font-size: 24px;
+  margin-left: 10px;
 }
-.last-sec .div1 div a:hover{
-    color: #fff;
-    transform: scale(1.1);
+.last-sec .div1 div a:hover {
+  color: #fff;
+  transform: scale(1.1);
 }
-.last-sec .div2{
-    width: 100%;
-    min-height: 300px;
-    margin-top: 50px;
-    border-bottom: 1px solid #f2fffe60;
+.last-sec .div2 {
+  width: 100%;
+  min-height: 300px;
+  margin-top: 50px;
+  border-bottom: 1px solid #f2fffe60;
 }
-.last-sec .div2 a{
-    display: block;
-    color: #BBB9B5;
-    margin-bottom: 10px;
-    transition: 0.2s;
+.last-sec .div2 a {
+  display: block;
+  color: #BBB9B5;
+  margin-bottom: 10px;
+  transition: 0.2s;
 }
-.last-sec .div2 a:hover{
-    color: #f70a0a;
-    text-decoration: underline;
-    transform: scalex(1.08);
+.last-sec .div2 a:hover {
+  color: #f70a0a;
+  text-decoration: underline;
+  transform: scaleX(1.08);
 }
-.last-sec .div2 h3{
-    margin-bottom: 25px;
+.last-sec .div2 h3 {
+  margin-bottom: 25px;
 }
-.last-sec .div3{
-    width: 100%;
-    min-height: 50px;
-    justify-content: center;
+.last-sec .div3 {
+  width: 100%;
+  min-height: 50px;
+  justify-content: center;
 }
-.last-sec .div3 p{
-    color: #BBB9B5;
+.last-sec .div3 p {
+  color: #BBB9B5;
 }
-.last-sec .div3 p span,.last-sec .div3 p a{
-    color: #f00;
-    padding: 0 2px;
+.last-sec .div3 p span,
+.last-sec .div3 p a {
+  color: #f00;
+  padding: 0 2px;
 }
-.last-sec .div3 p a:hover{
-    text-decoration: underline;
-    letter-spacing: 1px;
+.last-sec .div3 p a:hover {
+  text-decoration: underline;
+  letter-spacing: 1px;
 }
 .last-sec .div3 p span i {
-    animation: anamy 0.5s linear infinite alternate;
+  animation: anamy 0.5s linear infinite alternate;
 }
-
-@keyframes anamy{
-    0%{
-        color: #000000;
-        transform: scale(1);
-    }
-    100%{
-        color: #f00;
-        transform: scale(1.5);
-    }
+@keyframes anamy {
+  0% {
+    color: #000000;
+    transform: scale(1);
+  }
+  100% {
+    color: #f00;
+    transform: scale(1.5);
+  }
 }
